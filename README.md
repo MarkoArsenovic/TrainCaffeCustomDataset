@@ -29,9 +29,12 @@ The images are labeled as class numbers. If names of images contain spaces, coul
 
 http://christopher5106.github.io/deep/learning/2015/09/04/Deep-learning-tutorial-on-Caffe-Technology.html
 
-There are few more python script for plotting errors and accuracy out of the log file, for example progres_plot.py to plot accuracy, usage from terminal python progress_plot.py /path/to/output_finetune.txt, examples in the Plots directory.
+There are few more python script for plotting errors and accuracy out of the log file, for example progres_plot.py to plot accuracy, usage from terminal python progress_plot.py /path/to/output_finetune.txt.
 
-Also, there is example of plotting top-1 & top-5 accuracy using error_plot.py.
+Also, there is example of plotting top-1 & top-5 accuracy using error_plot.py, , plots examples in the Plots directory.
+
+Example visualizing filtered images throughout the layers, visualize_layers.py, usage of script provided with example of leaf as an input image. All layers in the Net model could be visualize using visual.py, example in Plots directory.
+
 
 Further improvments and suggestions are welcome.
 
@@ -40,4 +43,3 @@ Further improvments and suggestions are welcome.
 
 
 
-Also, there is the example visualizing filtered images throughout the layers, visualize_layers.py, usage of script provided with example of leaf as an input image.

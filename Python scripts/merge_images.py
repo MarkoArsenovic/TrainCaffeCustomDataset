@@ -41,7 +41,7 @@ for im in images:
 
 new_im.save('test2.jpg')
 
-#SPAJANJE DVA REDA SLIKA VIZUALIZACIJE
+#MERGE TWO ROWS
 
 img1 = cv2.imread('test1.jpg')
 img2 = cv2.imread('test2.jpg')
