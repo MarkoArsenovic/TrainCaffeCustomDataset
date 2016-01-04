@@ -2,30 +2,30 @@
 
 How to train Caffe ImageNet on custom dataset
 
-This is short description on training your own custom Net based on your image dataset using pre-trained CaffeNet model.
+This is short description of training your own custom Net based on your image dataset using pre-trained CaffeNet model.
 
 This repo contains all required python and shell scripts  for pretraining and training stage, not optimized and could be cleaner code, sorry...
 
-Collect all your images for test and valuation process and put them in Test and Train folders, each class of images should  be placed as subfolder in these two folders. Example, two classes expected for your model, cars and bikes : Train/cars, Train/bikes etc.
+1. Collect all your images for test and valuation process and put them in Test and Train folder, each class of images should  be placed as subfolder in these two folders. Example, two classes used for your model, cars and bikes : Train/cars, Train/bikes etc.
 
-First, create your own train.txt and val.txt files using train_val.py script. The content of these txt files will be as example :
+2. First, create your own train.txt and val.txt files using train_val.py script. The content of these txt files will be as example :
 
 Train/bike/bike.jpg 0                    Test/bike/bike.jpg 0    
 Train/car/car.jpg 1                      Test/car/car.jpg 1
+	
+The images are labeled as class numbers. If names of images contain spaces, could be removed using remove_spaces.py.
 
-The images are labeled as class numbers. If names contain spaces, could be removed using remove_spaces.py.
+3. The second stage is to create leveldb libraries using create_leveldb.sh, just change the required paths inside the script.
 
-The second stage is to create leveldb libraries using create_leveldb.sh, just change the required paths inside the script.
+4. After that, compute the mean using make_imagenet_mean.sh, the imagenet_mean.binaryproto file will be created.
 
-After that, compute the mean using make_imagenet_mean.sh, the imagenet_mean.binaryproto file will be crated.
+5. Create your proto files, examples are provided, you should have train & val proto files and solver proto file for setting training parameters (momentum, decay, snapshots, no. of iterations etc.). Change the num_output in fully-connected layer for custom number of classes, for example if you are recognizing only bikes and cars num_output = 2.
 
-Create your proto files, examples are provoded, you should have train & val proto files and soler proto file for setting training parameters. Change the num_output in fully-connected layer for custom number of classe, example of bikes and cars num_output = 2.
+6. The next step is to start training the Net, using finetune_imagenet.sh, gpu or cpu, the log of training will be placed in output_finetune.txt.
 
-The next step is to start training the Net, using finetune_imagenet.sh, gpu or cpu, the log of training will be placed in output_finetune.txt.
+7. After the training is done, caffemodel files will be generated, snapshots after every 1000th iteration.
 
-After the training is done, caffemodel files will be generated.
-
-To test the net you can write simpe python script, bunch of tutorials are provided, example:
+8. To test the net you can write simpe python script, bunch of tutorials are provided, example:
 
 http://christopher5106.github.io/deep/learning/2015/09/04/Deep-learning-tutorial-on-Caffe-Technology.html
 
