@@ -1,4 +1,4 @@
-# Train-Caffe-ImageNet-on-custom-dataset
+# Train Caffe ImageNet model on custom dataset
 
 How to train Caffe ImageNet on custom dataset
 
@@ -36,7 +36,7 @@ Also, there is example of plotting top-1 & top-5 accuracy using error_plot.py, p
 Example visualizing filtered images throughout the layers, visualize_layers.py, usage of script provided with example of leaf as an input image. All layers in the Net model could be visualize using visual.py, example in Plots directory.
 
 
-Further improvments and suggestions are welcome.
+Further improvements and suggestions are welcome.
 
 
 
