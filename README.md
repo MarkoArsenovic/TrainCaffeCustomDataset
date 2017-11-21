@@ -1,6 +1,6 @@
-# Train Caffe ImageNet model on custom dataset
+# Train CaffeNet model on custom dataset
 
-How to train Caffe ImageNet on custom dataset
+How to train CaffeNet on custom dataset
 
 This is short description of training your own custom Net based on your image dataset using pre-trained CaffeNet model.
 
